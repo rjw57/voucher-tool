@@ -1,3 +1,7 @@
+This repository contains a simple tool to verify vouchers used with the UIS
+[self service gateway](http://selfservice.uis.cam.ac.uk/). The tool can be
+accessed at https://rjw57.github.io/voucher-tool/.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -26,6 +30,10 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run deploy`
+
+Builds the app for production and deploys it to GitHub pags.
 
 ### `npm run eject`
 
