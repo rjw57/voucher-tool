@@ -134,7 +134,14 @@ interface IVerifyAndDecodeResult {
 const verifyAndDecodeVoucher = (voucher: string): IVerifyAndDecodeResult => {
   const errors: string[] = [];
 
-  const unverifiedDecoding = jwt.decode(voucher, { complete: true });
+  let unverifiedDecoding;
+  try {
+    unverifiedDecoding = jwt.decode(voucher, { complete: true });
+  } catch(error) {
+    errors.push(`Voucher cannot be decoded: ${error.message}`);
+    return { isValid: false, errors };
+  }
+
   if(unverifiedDecoding === null) {
     errors.push('Voucher cannot be decoded.');
     return { isValid: false, errors };
